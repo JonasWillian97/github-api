@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GithubService } from 'src/app/services/github.service';
 
 @Component({
   selector: 'app-card',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class CardComponent {
 
+  constructor(private githubService: GithubService){
+    this.githubService.getUser();
+  }
 }
+
