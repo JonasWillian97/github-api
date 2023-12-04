@@ -1,0 +1,39 @@
+$padding: 20px;
+$color: rgb(90, 90, 92);
+$textAlign: center;
+$display: flex;
+$justify: center;
+$borderRadius: 6px;
+
+mat-card{
+    margin: 50px 20px;
+    padding: $padding;
+}
+
+.card_title{
+    color: rgb(18, 18, 223);
+    text-align: $textAlign;
+}
+
+.card_title > h2{
+    font-size: 30px;
+}
+
+.card_body{
+    display: $display;
+    justify-content: $justify;
+    height: 300px;
+    background-color: $color;
+    border-radius: $borderRadius;
+}
+
+.card_attribute{
+    display: $display;
+    justify-content: $justify;
+    padding: 10px;
+}
+
+.card_attribute > span{
+    color: rgb(18, 18, 223);
+    font-size: 18px;
+}
