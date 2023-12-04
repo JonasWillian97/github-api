@@ -15,8 +15,8 @@ export class GithubService {
 
    }
 
-   getUser(){
-    return this.http.get<githubUser>(`${this.baseUrl}`)
+   getUser(name: string){
+    return this.http.get<githubUser>(`${this.baseUrl}${name}`)
    }
 
 }

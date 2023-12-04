@@ -18,7 +18,11 @@ export class CardComponent {
   }
 
   constructor(private githubService: GithubService){
-    this.githubService.getUser().subscribe({
+    this.searchUser("jonaswillian97");
+  }
+  
+  searchUser(search: string){
+    this.githubService.getUser(search).subscribe({
       next: (res) => {
         this.githubUser$ = {
           name: res.name,
@@ -28,6 +32,7 @@ export class CardComponent {
         }
       }
     });
+
   }
 }
 

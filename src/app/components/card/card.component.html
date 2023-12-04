@@ -1,5 +1,5 @@
 <mat-card>
-    <app-input></app-input>
+    <app-input (input)="searchUser($any($event.target).value)"></app-input>
     <div class="card_title">
         <h2>{{githubUser$?.name}}</h2>
     </div>
