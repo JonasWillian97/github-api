@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { githubUser } from 'src/app/models/githubUser';
 import { GithubService } from 'src/app/services/github.service';
 
 @Component({
@@ -8,8 +10,24 @@ import { GithubService } from 'src/app/services/github.service';
 })
 export class CardComponent {
 
+   githubUser$?: githubUser = {
+    name: "",
+    login: "",
+    avatar_url: "",
+    bio: ""
+  }
+
   constructor(private githubService: GithubService){
-    this.githubService.getUser();
+    this.githubService.getUser().subscribe({
+      next: (res) => {
+        this.githubUser$ = {
+          name: res.name,
+          login: res.login,
+          avatar_url: res.avatar_url,
+          bio: res.bio
+        }
+      }
+    });
   }
 }
 

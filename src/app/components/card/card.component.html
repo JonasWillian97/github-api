@@ -1,14 +1,14 @@
 <mat-card>
     <div class="card_title">
-        <h2>Jonas Willian</h2>
+        <h2>{{githubUser$?.name}}</h2>
     </div>
 
     <div class="card_body">
-        <img src="" alt="usuário github"/>
-        <span>Login</span>
+        <img [src]="githubUser$?.avatar_url" alt="usuário github"/>
+        <span>{{githubUser$?.login}}</span>
     </div>
 
     <div class="card_attribute">
-        <span>Front-end</span>
+        <span>{{githubUser$?.bio}}</span>
     </div>
 </mat-card>

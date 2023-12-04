@@ -31,6 +31,8 @@ mat-card{
 
 .card_body > img{
    height: 50%;
+   border-radius: 50%;
+   border: 2px solid #fff;
 }
 
 .card_body > span{
